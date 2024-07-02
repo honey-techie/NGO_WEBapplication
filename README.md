@@ -4,4 +4,4 @@ This project, NGO-WebApplication, was developed as part of a team project at III
 
 ## Video Demonstration
 
-[![Watch the video](https://github.com/honey-techie/NGO_WEBapplication/blob/main/thumbnail.png)](https://github.com/honey-techie/NGO_WEBapplication/blob/main/demo.mp4)
+[![Watch the video](https://github.com/honey-techie/NGO_WEBapplication/blob/main/thumbnail.png)](https://youtu.be/PZIXUD0ICj0)
