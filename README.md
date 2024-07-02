@@ -4,4 +4,4 @@ This project, NGO-WebApplication, was developed as part of a team project at III
 
 ## Video Demonstration
 
-[![You can find a video demonstration of the application](videos/thumbnail.png)](videos/demo.mp4)
+[![You can find a video demonstration of the application](videos/thumbnail.png)](https://www.youtube.com/watch?v=YlsPgzAfAHo)
