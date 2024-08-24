@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(animate);
     }
 
-    fetch('http://127.0.0.1:5000/track/donations')
+    fetch('http://13.235.241.106/track/donations')
         .then(response => response.json())
         .then(data => {
             const raisedElement = document.getElementById('raised');

@@ -1,10 +1,12 @@
 const mysql = require('mysql2');
+const dotenv=require('dotenv')
+dotenv.config({path: './config.env'});
 
 const db = mysql.createConnection({
-  host: "mysql-db-instance-lab5.co0ynpevyflj.ap-south-1.rds.amazonaws.com",
-  user: "admin",
-  password: "Rds-2023",
-  database: "webpage",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 db.connect(function(err) {
@@ -12,13 +14,14 @@ db.connect(function(err) {
   console.log("Connected to the database!");
 });
 
-db.query('SET time_zone = "+05:30"', (err, result) => {
-  if (err) {
-    console.error('Error setting timezone: ' + err.stack);
-    return;
-  }
-  console.log('Timezone set to IST.');
-});
+// db.query('SET time_zone = "+05:30"', (err, result) => {
+//   if (err) {
+//     console.error('Error setting timezone: ' + err.stack);
+//     return;
+//   }
+//   console.log('Current time: ' + result[0]);
+//   console.log('Timezone set to IST.');
+// });
 
 module.exports = db;
 

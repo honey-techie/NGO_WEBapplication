@@ -3,10 +3,13 @@ const axios = require("axios");
 const crypto = require("crypto");
 const db = require('./../database')
 
+const dotenv=require('dotenv');
+dotenv.config({path: './config.env'});
 
-const SALT_KEY = "099eb0cd-02cf-4e2a-8aca-3e6c6aff0399";
-const MERCHANT_ID = "PGTESTPAYUAT";
-const KEY_INDEX = 1;
+
+const SALT_KEY = process.env.SALT_KEY;
+const MERCHANT_ID = process.env.MERCHANT_ID;
+const KEY_INDEX = process.env.KEY_INDEX;
 
 exports.newPayment = async (req, res) => {
   try {
@@ -19,7 +22,7 @@ exports.newPayment = async (req, res) => {
           merchantTransactionId: merchantTransactionId,
           merchantUserId: 'MUID' + userId,
           amount: amount * 100,
-          redirectUrl: `http://127.0.0.1:5000/donate/status/${merchantTransactionId}`,
+          redirectUrl: `http://${process.env.DOMAIN}/donate/status/${merchantTransactionId}`,
           redirectMode: 'POST',
           paymentInstrument: {
               type: 'PAY_PAGE'

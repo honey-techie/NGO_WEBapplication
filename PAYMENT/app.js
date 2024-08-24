@@ -2,8 +2,10 @@ const express = require("express"); // provides a set of tools and features that
 const morgan = require("morgan"); // logging package for development purposes
 const cors = require("cors"); // allows for cross-origin resource sharing (CORS) in the server
 const bodyParser = require("body-parser");
-const port = 5000;
+const dotenv=require('dotenv')
+dotenv.config({path: './config.env'});;
 
+const port = process.env.PORT;
 const app = express();
 
 const donateRoute = require('./Routes/donateRoute')
@@ -57,8 +59,9 @@ app.use((error, req, res, next) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Server has started at http://127.0.0.1:${port}`);
+const hostIP = "0.0.0.0";
+app.listen(port, hostIP, () => {
+  console.log(`Server has started at http://${hostIP}:${port}`);
 })
 
 

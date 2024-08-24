@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("http://127.0.0.1:5000/track/details")
+  fetch("http://13.235.241.106/track/details")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
